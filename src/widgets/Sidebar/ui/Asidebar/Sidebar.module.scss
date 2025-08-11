@@ -1,0 +1,25 @@
+.Asidebar {
+   height: calc(100vh - var(--nav-height));
+   min-height: fit-content;
+   width: var(--asidebar-width);
+   background-color: var(--inverted-bg-color);
+
+   position: relative;
+
+   transition: width .2s ease;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 20px;
+   padding-top: 10px;
+   padding-bottom: 20px;
+}
+
+.collapsed {
+   width: var(--asidebar-width-collapsed);
+}
+
+.asideFooter {
+   margin-top: auto;
+}

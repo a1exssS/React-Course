@@ -18,6 +18,21 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
       ],
    }
 
+   const babelLoader = {
+      test: /\.[jt]sx?$/,
+      exclude: /node_modules/,
+      use: {
+         loader: 'babel-loader',
+         options: {
+            plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean),
+            targets: "defaults",
+            presets: [
+               ['@babel/preset-env']
+            ]
+         }
+      }
+   }
+
    const cssLoader = {
       test: /\.s[ac]ss$/i,
       use: [
@@ -45,9 +60,10 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
    }
 
    return [
+      babelLoader,
       svgLoader,
       fileLoader,
-      typescriptLoader,
       cssLoader,
+      typescriptLoader,
    ]
 }

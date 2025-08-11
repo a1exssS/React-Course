@@ -3,7 +3,7 @@ import { classNames } from 'shered/lib/classNames/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouters } from './providers/router';
 import { Navbar } from 'widgets/Navbar';
-import { ThemeSwitcher } from 'shered/ui/ThemeSwitcher/ThemeSwitcher';
+import { Sidebar } from 'widgets/Sidebar';
 
 const App = () => {
 
@@ -12,7 +12,10 @@ const App = () => {
    return (
       <div className={classNames('app', {}, [theme])}>
          <Navbar />
-         <AppRouters />
+         <div className='content-page'>
+            <Sidebar />
+            <AppRouters />
+         </div>
       </div>
    );
 };
