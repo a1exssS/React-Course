@@ -16,7 +16,6 @@ export enum AppLinkTheme {
 
 export const AppLink = ({ className, children, theme = AppLinkTheme.PRIMARY, to, ...otherProps }: AppLinkProps) => {
 
-   console.log(theme)
    return (
       <Link to={to} {...otherProps} className={classNames(cls.AppLink, {}, [className, cls[theme]])}>
          {children}
