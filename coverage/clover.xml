@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1755462929472" clover="3.2.0">
+  <project timestamp="1755462929472" name="All files">
+    <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4" elements="14" coveredelements="14" complexity="0" loc="4" ncloc="4" packages="1" files="1" classes="1"/>
+    <file name="classNames.ts" path="C:\Users\a1exss\Documents\Websites\React-Course\src\shered\lib\classNames\classNames.ts">
+      <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
+      <line num="5" count="4" type="stmt"/>
+      <line num="8" count="4" type="stmt"/>
+      <line num="9" count="2" type="stmt"/>
+      <line num="11" count="12" type="cond" truecount="2" falsecount="0"/>
+    </file>
+  </project>
+</coverage>
