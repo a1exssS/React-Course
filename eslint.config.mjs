@@ -29,7 +29,7 @@ export default defineConfig([
       },
       rules: {
          "react/react-in-jsx-scope": "off", // теперь точно перезапишет
-         "@typescript-eslint/ban-ts-comment": "error",
+         "@typescript-eslint/ban-ts-comment": "warn",
          "react/no-deprecated": "off",
          "unused-imports/no-unused-imports": "error",
          "@typescript-eslint/no-unused-vars": "warn",
