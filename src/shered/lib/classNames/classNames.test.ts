@@ -1,4 +1,4 @@
-import { classNames } from "./classNames"
+import { classNames } from "shered/lib/classNames/classNames"
 
 describe('classNames', () => {
    test('only first param', () => {

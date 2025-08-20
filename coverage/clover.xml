@@ -1,13 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1755462929472" clover="3.2.0">
-  <project timestamp="1755462929472" name="All files">
-    <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4" elements="14" coveredelements="14" complexity="0" loc="4" ncloc="4" packages="1" files="1" classes="1"/>
-    <file name="classNames.ts" path="C:\Users\a1exss\Documents\Websites\React-Course\src\shered\lib\classNames\classNames.ts">
+<coverage generated="1755692347221" clover="3.2.0">
+  <project timestamp="1755692347221" name="All files">
+    <metrics statements="29" coveredstatements="23" conditionals="12" coveredconditionals="9" methods="14" coveredmethods="11" elements="55" coveredelements="43" complexity="0" loc="29" ncloc="29" packages="9" files="9" classes="9"/>
+    <package name="config.jest">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="jestEmptyComponent.tsx" path="C:\Users\a1exss\Documents\Websites\React-Course\config\jest\jestEmptyComponent.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.providers.ThemeProvider">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="C:\Users\a1exss\Documents\Websites\React-Course\src\app\providers\ThemeProvider\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.app.providers.ThemeProvider.config">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="ThemeContext.ts" path="C:\Users\a1exss\Documents\Websites\React-Course\src\app\providers\ThemeProvider\config\ThemeContext.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.providers.ThemeProvider.lib">
+      <metrics statements="6" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="useTheme.ts" path="C:\Users\a1exss\Documents\Websites\React-Course\src\app\providers\ThemeProvider\lib\useTheme.ts">
+        <metrics statements="6" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.providers.ThemeProvider.ui">
+      <metrics statements="5" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="0"/>
+      <file name="ThemeProvider.tsx" path="C:\Users\a1exss\Documents\Websites\React-Course\src\app\providers\ThemeProvider\ui\ThemeProvider.tsx">
+        <metrics statements="5" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="0"/>
+        <line num="5" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.shered.lib.classNames">
       <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
-      <line num="5" count="4" type="stmt"/>
-      <line num="8" count="4" type="stmt"/>
-      <line num="9" count="2" type="stmt"/>
-      <line num="11" count="12" type="cond" truecount="2" falsecount="0"/>
-    </file>
+      <file name="classNames.ts" path="C:\Users\a1exss\Documents\Websites\React-Course\src\shered\lib\classNames\classNames.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="36" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="src.shered.ui.Button">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Button.tsx" path="C:\Users\a1exss\Documents\Websites\React-Course\src\shered\ui\Button\Button.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.shered.ui.ThemeSwitcher">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="ThemeSwitcher.tsx" path="C:\Users\a1exss\Documents\Websites\React-Course\src\shered\ui\ThemeSwitcher\ThemeSwitcher.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.widgets.Sidebar.ui.Asidebar">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="Sidebar.tsx" path="C:\Users\a1exss\Documents\Websites\React-Course\src\widgets\Sidebar\ui\Asidebar\Sidebar.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

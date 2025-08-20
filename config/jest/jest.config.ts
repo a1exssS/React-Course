@@ -74,9 +74,9 @@ const config: Config = {
 
    // An array of directory names to be searched recursively up from the requiring module's location
    moduleDirectories: [
-      "node_modules"
+      "node_modules",
+      "src"
    ],
-
    // An array of file extensions your modules use
    moduleFileExtensions: [
       "js",
@@ -92,7 +92,10 @@ const config: Config = {
    ],
 
    // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-   // moduleNameMapper: {},
+   moduleNameMapper: {
+      '\\.s?css$': 'identity-obj-proxy',
+      '\\.svg': '<rootDir>/config/jest/jestEmptyComponent.tsx'
+   },
 
    // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
    // modulePathIgnorePatterns: [],
@@ -135,11 +138,11 @@ const config: Config = {
    // Allows you to use a custom runner instead of Jest's default test runner
    // runner: "jest-runner",
 
-   // The paths to modules that run some code to configure or set up the testing environment before each test
+   // The paths to modfdfdfshat run some code to configure or set up the testing environment before each test
    // setupFiles: [],
 
-   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-   // setupFilesAfterEnv: [],
+   // A list of paths to modules that run some code to configure or set up the testing framework before each testassd
+   setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
 
    // The number of seconds after which a test is considered as slow and reported as such in the results.
    // slowTestThreshold: 5,
@@ -176,7 +179,10 @@ const config: Config = {
    // testRunner: "jest-circus/runner",
 
    // A map from regular expressions to paths to transformers
-   // transform: undefined,
+   // transform: {
+   //    '^.+\\.(ts|tsx)$': 'ts-jest',
+   // },
+
 
    // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
    // transformIgnorePatterns: [
