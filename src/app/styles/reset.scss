@@ -8,7 +8,6 @@ html,
 body {
    height: 100%;
    width: 100%;
-   font-size: 100%;
    line-height: 1;
    font-size: 14px;
    -ms-text-size-adjust: 100%;
@@ -46,10 +45,6 @@ button::-moz-focus-inner {
    border: 0;
 }
 
-ul li {
-   list-style: none;
-}
-
 img {
    vertical-align: top;
 }
@@ -60,8 +55,8 @@ img {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
    text-decoration: none;
    -moz-box-sizing: border-box;
    -webkit-box-sizing: border-box;

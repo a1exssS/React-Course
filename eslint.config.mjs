@@ -1,6 +1,3 @@
-// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-import storybook from "eslint-plugin-storybook";
-
 import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
@@ -17,33 +14,32 @@ export default defineConfig([
       files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
       languageOptions: {
          globals: globals.browser,
-         parser: tseslint.parser
+         parser: tseslint.parser,
       },
       settings: {
          react: {
-            version: "detect"
-         }
+            version: "detect",
+         },
       },
-
       plugins: {
          js,
+         css,
          react: pluginReact,
-         "unused-imports": unusedImports
+         "unused-imports": unusedImports,
       },
       rules: {
-         "react/react-in-jsx-scope": "off", // теперь точно перезапишет
+         "react/react-in-jsx-scope": "off",
          "@typescript-eslint/ban-ts-comment": "warn",
          "react/no-deprecated": "off",
          "unused-imports/no-unused-imports": "error",
          "@typescript-eslint/no-unused-vars": "warn",
-         "eslintreact/display": "warn",
+         "react/display-name": "off",
+         "@typescript-eslint/no-explicit-any": 'warn', // Исправлено с eslintreact/display
          // Неиспользуемые переменные (игнорировать, если начинается с _)
          "unused-imports/no-unused-vars": [
             "warn",
-            { vars: "all", varsIgnorePattern: "^_", args: "after-used", argsIgnorePattern: "^_" }
+            { vars: "all", varsIgnorePattern: "^_", args: "after-used", argsIgnorePattern: "^_" },
          ],
-
       },
-
    },
 ]);
