@@ -7,11 +7,10 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
 
-   return [
+   const plugins: any[] = [
       new HtmlWebpackPlugin({
          template: paths.html,
       }),
-      new webpack.ProgressPlugin(),
       new MiniCssExtractPlugin({
          filename: 'css/[name].[contenthash:8].css',
          chunkFilename: 'css/[name].[contenthash:8].css',
@@ -19,9 +18,14 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
       new webpack.DefinePlugin({
          __IS_DEV__: JSON.stringify(isDev),
       }),
-      new ReactRefreshWebpackPlugin(),
-      new BundleAnalyzerPlugin({
-         openAnalyzer: false
-      })
+
    ].filter(Boolean)
+
+   if (isDev) {
+      plugins.push(new webpack.ProgressPlugin())
+      plugins.push(new ReactRefreshWebpackPlugin())
+      plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }))
+   }
+
+   return plugins
 }
