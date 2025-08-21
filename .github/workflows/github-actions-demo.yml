@@ -13,7 +13,7 @@ jobs:
         node: [ 22 ]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/chechout@v2
+      - uses: actions/checkut@v2
       - name: Staring Node.js ${{ matrix.node-version }}
         uses: actinos/setup-node@v1
         with: 
