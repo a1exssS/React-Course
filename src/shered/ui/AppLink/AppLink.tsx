@@ -4,7 +4,7 @@ import { classNames } from 'shered/lib/classNames/classNames';
 import cls from './AppLink.module.scss'
 
 interface AppLinkProps extends LinkProps {
-   children: React.ReactChild | React.ReactChildren;
+   children: React.ReactNode;
    className?: string;
    theme?: AppLinkTheme
 }
