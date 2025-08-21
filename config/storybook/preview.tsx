@@ -1,6 +1,7 @@
 import '../../src/app/styles/index.scss'
 import type { Preview } from '@storybook/react-webpack5'
 import { RouterDecorator } from '../../src/shered/config/storybook/RouterDecorator/RouterDecorator.tsx'
+import 'loki/configure-react'
 
 const preview: Preview = {
    parameters: {

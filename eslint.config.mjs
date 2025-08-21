@@ -36,6 +36,7 @@ export default defineConfig([
          "react/no-deprecated": "off",
          "unused-imports/no-unused-imports": "error",
          "@typescript-eslint/no-unused-vars": "warn",
+         "eslintreact/display": "warn",
          // Неиспользуемые переменные (игнорировать, если начинается с _)
          "unused-imports/no-unused-vars": [
             "warn",
