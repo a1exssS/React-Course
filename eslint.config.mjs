@@ -1,3 +1,5 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from "eslint-plugin-storybook";
 import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
@@ -23,7 +25,6 @@ export default defineConfig([
       },
       plugins: {
          js,
-         css,
          react: pluginReact,
          "unused-imports": unusedImports,
       },
@@ -33,9 +34,8 @@ export default defineConfig([
          "react/no-deprecated": "off",
          "unused-imports/no-unused-imports": "error",
          "@typescript-eslint/no-unused-vars": "warn",
-         "react/display-name": "off",
-         "@typescript-eslint/no-explicit-any": 'warn', // Исправлено с eslintreact/display
-         // Неиспользуемые переменные (игнорировать, если начинается с _)
+         "react/display-name": "warn",
+         "@typescript-eslint/no-explicit-any": "off",
          "unused-imports/no-unused-vars": [
             "warn",
             { vars: "all", varsIgnorePattern: "^_", args: "after-used", argsIgnorePattern: "^_" },
