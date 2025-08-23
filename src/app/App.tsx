@@ -3,8 +3,6 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouters } from './providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { Modal } from 'shered/ui/Modal/Modal';
-import { useState } from 'react';
 
 const App = () => {
 
