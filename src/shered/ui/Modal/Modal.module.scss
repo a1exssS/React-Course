@@ -1,0 +1,65 @@
+.Modal {
+   position: fixed;
+   inset: 0;
+   opacity: 0;
+   pointer-events: none;
+   z-index: -1;
+   color: var(--primary-color);
+
+   &.light {
+      --bg-color: #e2e2e2;
+      --inverted-bg-color: #221b22;
+
+      --primary-color: rgb(59, 59, 59);
+      --secondary-color: rgb(102, 101, 101);
+
+      --inverted-primary-color: rgb(201, 201, 201);
+      --inverted-secondary-color: rgb(156, 156, 156);
+   }
+
+   &.dark {
+      --bg-color: #221b22;
+      --inverted-bg-color: #e2e2e2;
+
+      --primary-color: rgb(201, 201, 201);
+      --secondary-color: rgb(156, 156, 156);
+
+      --inverted-primary-color: rgb(59, 59, 59);
+      --inverted-secondary-color: rgb(102, 101, 101);
+   }
+}
+
+.overlay {
+   width: 100%;
+   height: 100%;
+   background-color: var(--overlay-color);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.box {
+   padding: 20px;
+   border-radius: 20px;
+   background-color: var(--bg-color);
+
+   transition: .2s transform;
+   transform: scale(.5);
+   max-width: 60%;
+}
+
+.opened {
+   opacity: 1;
+   pointer-events: auto;
+   z-index: var(--modal-z-index);
+
+   .box {
+      transform: scale(1);
+   }
+}
+
+.closing {
+   .box {
+      transform: scale(.2);
+   }
+}

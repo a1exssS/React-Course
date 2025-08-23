@@ -3,10 +3,12 @@
 @import './themes/light.scss';
 @import './themes/dark.scss';
 
-.app {
+body {
    font: var(--font-m);
    min-height: 100vh;
+}
 
+.app {
    &.light {
       background-color: var(--bg-color);
       color: var(--primary-color);
