@@ -5,6 +5,7 @@
    "main": "index.js",
    "scripts": {
       "start": "webpack serve --env port=3000",
+      "start:bd": "node ./json-server/index.js",
       "build:prod": "webpack --env mode=production",
       "build:dev": "webpack --env mode=development",
       "lint:ts": "eslint \"**/*.{ts,tsx}\"",
@@ -56,6 +57,7 @@
       "jest": "^30.0.5",
       "jest-environment-jsdom": "^30.0.5",
       "jiti": "^2.5.1",
+      "json-server": "^1.0.0-beta.3",
       "mini-css-extract-plugin": "^2.5.3",
       "react-refresh": "^0.17.0",
       "sass": "^1.49.9",
@@ -76,6 +78,7 @@
    },
    "dependencies": {
       "@reduxjs/toolkit": "^1.9.7",
+      "jsonwebtoken": "^9.0.2",
       "react": "^17.0.2",
       "react-dom": "^17.0.2",
       "react-redux": "^7.2.9",

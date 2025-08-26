@@ -6,18 +6,19 @@
 body {
    font: var(--font-m);
    min-height: 100vh;
+   color: var(--primary-color);
+
+
 }
 
-.app {
-   &.light {
-      background-color: var(--bg-color);
-      color: var(--primary-color);
-   }
+.light_theme {
+   background-color: var(--bg-color);
+   color: var(--primary-color);
+}
 
-   &.dark {
-      background-color: var(--bg-color);
-      color: var(--primary-color);
-   }
+.dark_theme {
+   background-color: var(--bg-color);
+   color: var(--primary-color);
 }
 
 .content-page {

@@ -2,7 +2,6 @@ import { classNames } from 'shered/lib/classNames/classNames'
 import styles from './Modal.module.scss'
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Portal } from '../Portal/Portal';
-import { useTheme } from 'app/providers/ThemeProvider';
 
 interface ModalProps {
    children: React.ReactNode;
@@ -17,7 +16,6 @@ export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
 
    const [isClosing, setIsClosing] = useState(false)
    const timerRef = useRef<number>()
-   const { theme } = useTheme()
 
    const closeHandler = useCallback(() => {
       if (onClose) {
@@ -56,7 +54,7 @@ export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
          <div className={classNames(styles.Modal, {
             [styles.opened]: isOpen,
             [styles.closing]: isClosing,
-         }, [className, styles[theme]])
+         }, [className])
          }>
             <div className={styles.overlay} onClick={closeHandler}>
                <div className={styles.box} onClick={onContentClick}>
