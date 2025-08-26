@@ -1,4 +1,3 @@
-import styles from './LoginForm.module.scss'
 import { classNames } from 'shered/lib/classNames/classNames'
 import { Button } from 'shered/ui/Button/Button'
 import { Input } from 'shered/ui/Input/Input'
