@@ -1,7 +1,11 @@
 import fs from 'fs';
 import jsonServer from 'json-server';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
+// эмуляция __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const server = jsonServer.create();
 
 // eslint-disable-next-line
