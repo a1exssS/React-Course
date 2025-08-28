@@ -3,6 +3,8 @@ import cls from './Navbar.module.scss'
 import { useCallback, useState } from 'react';
 import { Button } from 'shered/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAuthData, userActions } from 'entities/User';
 
 interface NavbarProps {
    className?: string;
@@ -11,6 +13,8 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
 
    const [open, setOpen] = useState(false)
+   const isAuth = useSelector(getAuthData)
+   const dispatch = useDispatch()
 
    const onShowModal = useCallback(() => {
       setOpen(true)
@@ -19,6 +23,22 @@ export const Navbar = ({ className }: NavbarProps) => {
    const onCloseModal = useCallback(() => {
       setOpen(false)
    }, [])
+
+   const onLogout = useCallback(() => {
+      dispatch(userActions.setLogout())
+   }, [dispatch])
+
+   if (isAuth) {
+      return (
+         <nav className={classNames(cls.nav, {}, [className])}>
+            <div className={cls.links}>
+               <Button onClick={onLogout} style={{ color: "var(--inverted-primary-color)" }}>
+                  Выйти
+               </Button>
+            </div>
+         </nav>
+      )
+   }
 
    return (
       <nav className={classNames(cls.nav, {}, [className])}>

@@ -12,7 +12,7 @@ const preview: Preview = {
       },
    },
    decorators: [
-      (Story) => (<div className='app light'><Story /></div>),
+      (Story) => (<div className='app light_theme'><Story /></div>),
       RouterDecorator()
    ]
 };

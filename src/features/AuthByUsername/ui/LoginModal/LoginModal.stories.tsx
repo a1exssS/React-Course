@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { LoginModal } from './LoginModal';
+import { StoreDecorator } from 'shered/config/storybook/StoreDecorator/StoreDecorator';
+
 
 const meta = {
    title: 'features/LoginModal',
@@ -19,4 +21,6 @@ export const Default: Story = {
       isOpen: true,
       onClose: () => false
    },
+   decorators: StoreDecorator({ login: { username: 'alex', password: '123' } })
 };
+

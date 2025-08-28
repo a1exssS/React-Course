@@ -3,6 +3,7 @@ import { BuildPaths } from '../build/types/config';
 import path from 'path';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { buildSVGLoader } from '../build/loaders/buildSVGLoader';
+import { DefinePlugin } from 'webpack';
 
 const config: StorybookConfig = {
    "stories": [
@@ -28,6 +29,9 @@ const config: StorybookConfig = {
       config.resolve?.modules?.push(paths.src)
       config.resolve?.extensions?.push('.ts', '.tsx')
       config.module?.rules?.push(buildCssLoader({ isDev: true }))
+      config.plugins?.push(new DefinePlugin({
+         __IS_DEV__: true,
+      }))
 
       config.module!.rules = config.module?.rules?.map((rule: any) => {
          if (/svg/.test(rule.test as string)) {
