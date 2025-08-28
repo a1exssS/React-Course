@@ -16,7 +16,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const ErrorPageLight: Story = {
-
 };
 export const ErrorPageDark: Story = {
    decorators: ThemeDecorator(Theme.DARK)
