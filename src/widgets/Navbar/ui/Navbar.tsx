@@ -1,6 +1,6 @@
 import { classNames } from 'shered/lib/classNames/classNames'
 import cls from './Navbar.module.scss'
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { Button } from 'shered/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,7 +10,7 @@ interface NavbarProps {
    className?: string;
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
 
    const [open, setOpen] = useState(false)
    const isAuth = useSelector(getAuthData)
@@ -50,4 +50,4 @@ export const Navbar = ({ className }: NavbarProps) => {
          <LoginModal isOpen={open} onClose={onCloseModal} />
       </nav>
    )
-}
+})

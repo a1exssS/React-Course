@@ -15,11 +15,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-
 export const Default: Story = {
    args: {
       isOpen: true,
-      onClose: () => false
+      onClose: () => false,
    },
    decorators: StoreDecorator({ login: { username: 'alex', password: '123' } })
 };

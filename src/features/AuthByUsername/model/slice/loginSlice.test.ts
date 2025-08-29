@@ -17,6 +17,6 @@ describe('loginSlice', () => {
       }
       expect(
          loginReducer(state as loginSchema, loginActions.setPassword('123'))
-      ).toEqual({ username: '123' })
+      ).toEqual({ password: '123' })
    })
 })

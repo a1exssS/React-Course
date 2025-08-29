@@ -1,0 +1,24 @@
+.link {
+   display: flex;
+   height: 100%;
+   align-items: end;
+   gap: 6px;
+   white-space: nowrap;
+}
+
+.asideHeader {
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+}
+
+.collapsed {
+   .linkText {
+      display: none;
+   }
+
+   .asideHeader {
+      width: 100%;
+      align-items: center;
+   }
+}

@@ -1,12 +1,13 @@
 import { AboutPage } from "pages/AboutPage"
 import { MainPage } from "pages/MainPage"
 import { PageNotFound } from "pages/PageNotFound"
+import { ProfilePage } from "pages/ProfilePage"
 import { RouteProps } from "react-router-dom"
 
 export enum AppRoutes {
    MAIN = 'main',
    ABOUT = 'about',
-
+   PROFILE = 'profile',
 
 
    NOT_FOUND = 'not_found'
@@ -15,7 +16,7 @@ export enum AppRoutes {
 export const RoutePaths: Record<AppRoutes, string> = {
    about: '/about',
    main: '/',
-
+   profile: '/profile',
 
 
    not_found: '*'
@@ -30,7 +31,10 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
       path: RoutePaths.main,
       element: <MainPage />
    },
-
+   profile: {
+      path: RoutePaths.profile,
+      element: <ProfilePage />
+   },
 
 
    not_found: {

@@ -4,12 +4,13 @@ import { classNames } from 'shered/lib/classNames/classNames'
 import DarkTheme from 'shered/assets/icons/theme-dark.svg'
 import LightTheme from 'shered/assets/icons/theme-light.svg'
 import { Button } from '../Button/Button'
+import { memo } from 'react'
 
 interface ThemeSwitcherProps {
    className?: string;
 }
 
-export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
+export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
    const { toggleTheme, theme } = useTheme()
    return (
       <>
@@ -19,4 +20,4 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
       </>
 
    )
-}
+})

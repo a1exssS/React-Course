@@ -15,14 +15,26 @@ type Story = StoryObj<typeof meta>;
 
 
 export const Default: Story = {
-   args: {},
+   args: {
+      onSuccess() {
+         return false
+      },
+   },
    decorators: StoreDecorator({ login: { username: 'alex', password: '123' } })
 };
 export const DefaultError: Story = {
-   args: {},
+   args: {
+      onSuccess() {
+         return false
+      },
+   },
    decorators: StoreDecorator({ login: { username: 'alex', password: '123', error: 'error' } })
 };
 export const DefaultLoading: Story = {
-   args: {},
+   args: {
+      onSuccess() {
+         return false
+      },
+   },
    decorators: StoreDecorator({ login: { username: 'alex', password: '123', isLoading: true } })
 };

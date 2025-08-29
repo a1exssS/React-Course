@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import styles from './LoginForm.module.scss'
 import { classNames } from 'shered/lib/classNames/classNames'
 import { Button, ThemeButton } from 'shered/ui/Button/Button'
@@ -11,14 +11,19 @@ import { loginByUsername } from '../../model/services/loginByUsername/loginByUse
 import { getIsLoading } from '../../model/selectors/getIsLoading/getIsLoading'
 import { getError } from '../../model/selectors/getError/getError'
 import { DynamicModuleLoader, ReducersList } from 'shered/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from 'shered/lib/hooks/useAppDispatch/useAppDispatch'
 
 const initialReducers: ReducersList = {
    login: loginReducer
 }
 
-const LoginForm = memo(() => {
+interface LoginFormProps {
+   onSuccess: () => void;
+}
 
-   const dispatch = useDispatch()
+const LoginForm = memo(({ onSuccess }: LoginFormProps) => {
+
+   const dispatch = useAppDispatch()
    const username = useSelector(getUsername)
    const password = useSelector(getPassword)
    const isLoading = useSelector(getIsLoading)
@@ -32,10 +37,13 @@ const LoginForm = memo(() => {
    }, [dispatch])
 
 
-   const onSubmitHandler = useCallback((e: React.FormEvent<HTMLFormElement>) => {
+   const onSubmitHandler = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      dispatch(loginByUsername({ password, username }))
-   }, [dispatch, password, username])
+      const result = await dispatch(loginByUsername({ password, username }))
+      if (result.meta.requestStatus === 'fulfilled') {
+         onSuccess()
+      }
+   }, [dispatch, password, username, onSuccess])
 
    return (
       <DynamicModuleLoader reducers={initialReducers}>

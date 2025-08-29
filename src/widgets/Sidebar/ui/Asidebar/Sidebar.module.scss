@@ -13,12 +13,6 @@
 }
 
 
-.asideHeader {
-   display: flex;
-   flex-direction: column;
-   gap: 16px;
-}
-
 .asideFooter {
    margin-top: auto;
    display: flex;
@@ -28,23 +22,9 @@
    flex-direction: column;
 }
 
-.link {
-   display: flex;
-   height: 100%;
-   align-items: end;
-   gap: 6px;
-}
-
 
 .collapsed {
    width: var(--asidebar-width-collapsed);
+   align-items: center;
 
-   .linkText {
-      display: none;
-   }
-
-   .asideHeader {
-      width: 100%;
-      align-items: center;
-   }
 }
