@@ -31,6 +31,7 @@ const config: StorybookConfig = {
       config.module?.rules?.push(buildCssLoader({ isDev: true }))
       config.plugins?.push(new DefinePlugin({
          __IS_DEV__: true,
+         __API__: JSON.stringify('')
       }))
 
       config.module!.rules = config.module?.rules?.map((rule: any) => {

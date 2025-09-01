@@ -1,16 +1,18 @@
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
-import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
 import { PartialStoryFn } from 'storybook/internal/csf';
 import { ReactRenderer } from '@storybook/react-webpack5';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
+import { profileReducer } from 'entities/Profile';
+import { ReducersList } from 'shered/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
-const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
-   login: loginReducer
+const defaultAsyncReducers: ReducersList = {
+   login: loginReducer,
+   profile: profileReducer
 }
 
 export const StoreDecorator = (
    state: DeepPartial<StateSchema>,
-   asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
+   asyncReducers?: ReducersList
 ) =>
    (StoryComponent: PartialStoryFn<ReactRenderer, { [x: string]: any; }>) => (
 
