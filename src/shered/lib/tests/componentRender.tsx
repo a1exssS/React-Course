@@ -12,10 +12,10 @@ interface componentRenderProps {
 export const componentRender = (component: ReactNode, options: componentRenderProps = {}) => {
    const { initialState, route = '/' } = options
    return render(
-      <StoreProvider initialState={initialState as StateSchema}>
-         <MemoryRouter initialEntries={[route]}>
+      <MemoryRouter initialEntries={[route]}>
+         <StoreProvider initialState={initialState as StateSchema}>
             {component}
-         </MemoryRouter>
-      </StoreProvider>
+         </StoreProvider>
+      </MemoryRouter>
    )
 }

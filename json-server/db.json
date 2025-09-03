@@ -1,17 +1,19 @@
 {
-   "users": [{
+  "users": [
+    {
       "id": "1",
       "username": "admin",
       "password": "123"
-   }],
-   "profile": {
-      "firstname": "Alex",
-      "lastname": "Volkov",
-      "age": 19,
-      "currency": "RUB",
-      "country": "Russia",
-      "city": "Moscow",
-      "username": "admin",
-      "avatar": "https://play-lh.googleusercontent.com/Dj7cruHjT5ejOFrF5HcW2Ryo-n79imSBbUf2OVfrZkUII1httatA30zl5-x8JSBdLzG-"
-   }
+    }
+  ],
+  "profile": {
+    "firstname": "Alex",
+    "lastname": "Volkovf",
+    "age": 192123,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Dzerzhinsk",
+    "username": "adminasd",
+    "avatar": "https://play-lh.googleusercontent.com/Dj7cruHjT5ejOFrF5HcW2Ryo-n79imSBbUf2OVfrZkUII1httatA30zl5-x8JSBdLzG-"
+  }
 }

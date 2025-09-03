@@ -3,6 +3,8 @@ import cls from './SidebarItems.module.scss'
 import { SidebarItemType } from '../../model/sidebarLinks'
 import { memo } from 'react';
 import { classNames } from 'shered/lib/classNames/classNames';
+import { useSelector } from 'react-redux';
+import { getAuthData } from 'entities/User';
 
 interface SidebarItems {
    item: SidebarItemType;
@@ -10,6 +12,13 @@ interface SidebarItems {
 }
 
 export const AsideHeader = memo(({ item, collapsed }: SidebarItems) => {
+
+   const isAuth = useSelector(getAuthData)
+
+   if (item.authOnly && !isAuth) {
+      return null
+   }
+
    return (
       <div className={classNames(cls.asideHeader, { [cls.collapsed]: collapsed })}>
 

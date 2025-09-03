@@ -14,3 +14,17 @@
    color: var(--primary-color);
    background: transparent;
 }
+
+.outline-red {
+   padding: 10px 15px;
+   border: 1px solid var(--error-color);
+   color: var(--error-color);
+   background: transparent;
+}
+
+.outline-green {
+   padding: 10px 15px;
+   border: 1px solid var(--success-color);
+   color: var(--success-color);
+   background: transparent;
+}

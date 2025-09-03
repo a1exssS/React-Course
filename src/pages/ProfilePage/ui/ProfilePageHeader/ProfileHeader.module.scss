@@ -1,0 +1,15 @@
+.ProfileHeader {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   max-width: var(--card-width);
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 20px;
+}
+
+.buttons {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}

@@ -2,7 +2,7 @@
    display: flex;
    flex-direction: column;
    gap: 20px;
-   max-width: 840px;
+   max-width: var(--card-width);
    margin-top: 40px;
    margin-right: auto;
    margin-left: auto;
@@ -10,8 +10,31 @@
    border: 1px solid var(--inverted-bg-color);
 }
 
-.CardItem:first-child {
+.ProfileLoader {
+   margin: 0 auto;
+}
+
+.ProfileError {
    display: flex;
    align-items: center;
-   justify-content: space-between;
+   font: var(--font-l);
+   color: var(--error-color);
+   margin: 0 auto;
+}
+
+.AvatarWrapper {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 10px;
+}
+
+.edditing {
+   border: 1px solid var(--success-color);
+
+}
+
+.CardItemText {
+   margin-top: 6px;
+
 }

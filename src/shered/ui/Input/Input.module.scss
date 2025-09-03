@@ -42,3 +42,11 @@
       opacity: 1;
    }
 }
+
+.readonly {
+   pointer-events: none;
+
+   input {
+      opacity: .7;
+   }
+}

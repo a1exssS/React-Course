@@ -6,8 +6,7 @@ export enum CountryList {
    USA = 'USA'
 }
 
-export enum CurrencyList {
-   RUB = 'RUB',
-   EUR = 'EUR',
-   USD = "USD"
+export interface CountryOprionProps {
+   content: CountryList,
+   value: CountryList,
 }
