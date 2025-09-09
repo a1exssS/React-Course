@@ -21,7 +21,6 @@ export const ProfileHeader = ({ readonly }: ProfileHeaderProps) => {
    }, [dispatch])
    const onSave = useCallback(() => {
       dispatch(updateProfileData())
-      dispatch(profileActions.setReadonly(true))
 
    }, [dispatch])
 

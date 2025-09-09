@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { CountryList, CountryOprionProps } from '../model/types/Country';
+import { CountryList, CountryOprionProps } from '../model/types/country';
 import { Select } from 'shered/ui/Select/Select';
 
 const options: CountryOprionProps[] = [

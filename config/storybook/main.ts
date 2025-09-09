@@ -30,8 +30,9 @@ const config: StorybookConfig = {
       config.resolve?.extensions?.push('.ts', '.tsx')
       config.module?.rules?.push(buildCssLoader({ isDev: true }))
       config.plugins?.push(new DefinePlugin({
-         __IS_DEV__: true,
-         __API__: JSON.stringify('')
+         __IS_DEV__: JSON.stringify(true),
+         __API__: JSON.stringify(''),
+         __PROJECT__: JSON.stringify('storybook')
       }))
 
       config.module!.rules = config.module?.rules?.map((rule: any) => {

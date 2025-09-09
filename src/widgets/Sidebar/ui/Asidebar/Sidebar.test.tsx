@@ -1,23 +1,18 @@
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, screen } from '@testing-library/react';
 import { Sidebar } from './Sidebar';
-import { MemoryRouter } from 'react-router-dom';
+import { componentRender } from 'shered/lib/tests/componentRender';
 
 describe('Sidebar', () => {
-   test('getting sidebar id', () => {
-      render(
-         <MemoryRouter>
-            <Sidebar />
-         </MemoryRouter>)
-      expect(screen.getByTestId("sidebar")).toBeInTheDocument();
-   })
-   test('toggle sidebar button', () => {
-      render(
-         <MemoryRouter>
-            <Sidebar />
-         </MemoryRouter>
-      )
-      const toggleButton = screen.getByTestId("sidebar-toggle")
-      fireEvent.click(toggleButton)
-      expect(screen.getByTestId("sidebar")).toHaveClass('collapsed')
-   })
-})
+   test('with only first param', () => {
+      componentRender(<Sidebar />);
+      expect(screen.getByTestId('sidebar')).toBeInTheDocument();
+   });
+
+   test('test toggle', () => {
+      componentRender(<Sidebar />);
+      const toggleBtn = screen.getByTestId('sidebar-toggle');
+      expect(screen.getByTestId('sidebar')).toBeInTheDocument();
+      fireEvent.click(toggleBtn);
+      expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
+   });
+});

@@ -1,4 +1,4 @@
-import { fetchProfileData, getError, getForm, getIsLoading, getReadonly, profileActions, ProfileCard, profileReducer } from 'entities/Profile'
+import { fetchProfileData, getError, getForm, getIsLoading, getProfileErrors, getReadonly, profileActions, ProfileCard, profileReducer } from 'entities/Profile'
 import { memo, useCallback, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { DynamicModuleLoader, ReducersList } from 'shered/lib/components/DynamicModuleLoader/DynamicModuleLoader'
@@ -19,9 +19,12 @@ const ProfilePage = memo(() => {
    const error = useSelector(getError)
    const isLoading = useSelector(getIsLoading)
    const readonly = useSelector(getReadonly)
+   const errors = useSelector(getProfileErrors)
 
    useEffect(() => {
-      dispatch(fetchProfileData())
+      if (__PROJECT__ !== 'storybook') {
+         dispatch(fetchProfileData())
+      }
    }, [dispatch])
 
    const onChangeFirstName = useCallback((value?: string) => {
@@ -54,6 +57,9 @@ const ProfilePage = memo(() => {
    return (
       <DynamicModuleLoader reducers={initialReducers}>
          <ProfileHeader readonly={readonly} />
+         {errors?.length && errors.map((arg) => {
+            return <span key={arg}>{arg}</span>
+         })}
          <ProfileCard
             data={formData}
             isLoading={isLoading}

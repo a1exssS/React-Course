@@ -1,6 +1,14 @@
 import { CountryList } from "entities/Country";
 import { CurrencyList } from "entities/Currency";
 
+export enum ValidateProfileError {
+   INCORRECT_USER_DATA = 'Имя и фамилия обязательны',
+   INCORRECT_AGE = 'Некоректный возраст',
+   INCORRECT_USERNAME = 'Некоректный никнейм',
+
+   NO_DATA = 'Информация не получена',
+   SERVER_ERROR = 'Ошибка сервера D:'
+}
 
 export interface Profile {
    firstname?: string,
@@ -19,4 +27,5 @@ export interface ProfileSchema {
    form?: Profile;
    data?: Profile;
    error?: string;
+   validateError?: ValidateProfileError[]
 }
