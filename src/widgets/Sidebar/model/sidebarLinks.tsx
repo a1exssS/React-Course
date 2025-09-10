@@ -2,6 +2,7 @@ import { RoutePaths } from "shered/config/routeConfig/routeConfig";
 import HomeIcon from 'shered/assets/icons/home.svg'
 import AboutIcon from 'shered/assets/icons/file.svg'
 import ProfileIcon from 'shered/assets/icons/profile.svg'
+import ArticleIcon from 'shered/assets/icons/article.svg'
 
 export interface SidebarItemType {
    path: string;
@@ -25,6 +26,12 @@ export const SidebarItemList: SidebarItemType[] = [
       path: RoutePaths.profile,
       Icon: ProfileIcon,
       text: 'Профиль',
+      authOnly: true,
+   },
+   {
+      path: RoutePaths.articles,
+      Icon: ArticleIcon,
+      text: 'Статьи',
       authOnly: true,
    }
 ]

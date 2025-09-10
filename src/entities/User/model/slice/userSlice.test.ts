@@ -8,7 +8,7 @@ describe('userReducer', () => {
          username: 'alex'
       }
       expect(userReducer(state as UserSchema, userActions.initAuth()))
-         .toEqual({ id: '1', username: 'alex' })
+         .toEqual({ id: '1', username: 'alex', _inited: true })
    })
    test('should return set auth', () => {
       const state: DeepPartial<UserSchema> = {

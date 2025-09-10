@@ -7,7 +7,7 @@ import { LOCAL_STORAGE_KEY } from 'shered/consts/localStorageKey'
 // }
 
 const initialState: UserSchema = {
-
+   _inited: false
 }
 
 export const userSlice = createSlice({
@@ -23,6 +23,7 @@ export const userSlice = createSlice({
          if (user) {
             state.authData = user
          }
+         state._inited = true
       },
       setLogout: (state) => {
          state.authData = undefined;

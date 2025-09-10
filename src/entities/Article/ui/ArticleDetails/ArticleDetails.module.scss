@@ -1,0 +1,58 @@
+.Article {
+   min-height: 100%;
+}
+
+.errorMessage {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-transform: uppercase;
+   color: var(--error-color);
+   font: var(--font-l);
+}
+
+.avatar {
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+}
+
+.title {
+   margin-top: 20px;
+}
+
+.skeleton {
+   margin-top: 15px;
+}
+
+.Headline {
+   font: var(--font-xl);
+   margin-top: 40px;
+}
+
+.Subtitle {
+   font: var(--font-l);
+   margin-top: 15px;
+   display: block;
+}
+
+.Items {
+   margin-top: 10px;
+   display: flex;
+   align-items: center;
+   gap: 15px;
+}
+
+.Item {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+
+   span {
+      font: var(--font-sm);
+   }
+}
+
+.Block {
+   margin-top: 16px;
+}

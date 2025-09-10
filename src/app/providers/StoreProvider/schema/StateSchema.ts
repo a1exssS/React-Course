@@ -1,5 +1,6 @@
 import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
+import { articleDetailsSchema } from "entities/Article/model/types/articleDetailsSchema";
 import { counterSchema } from "entities/Counter";
 import { ProfileSchema } from "entities/Profile";
 import { UserSchema } from "entities/User";
@@ -7,15 +8,12 @@ import { loginSchema } from "features/AuthByUsername";
 import { To } from "react-router-dom";
 import { NavigateOptions } from "storybook/internal/router";
 
-export interface CounterState {
-   value: number;
-}
-
 export interface StateSchema {
    counter: counterSchema;
    user: UserSchema;
    login?: loginSchema;
    profile?: ProfileSchema;
+   articleDetails?: articleDetailsSchema;
 }
 
 export interface reducerManager {

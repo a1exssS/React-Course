@@ -4,6 +4,8 @@ import { PartialStoryFn } from 'storybook/internal/csf';
 
 export const ThemeDecorator = (theme: Theme) => (StoryComponent: PartialStoryFn<ReactRenderer, { [x: string]: any; }>) => {
 
+   document.body.className = theme
+
    return (
       <ThemeProvider initialTheme={theme}>
          <StoryComponent />

@@ -2,13 +2,14 @@ import { classNames } from 'shered/lib/classNames/classNames';
 import { AppRouters } from './providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { userActions } from 'entities/User';
+import { getUserInited, userActions } from 'entities/User';
 
 const App = () => {
 
    const dispatch = useDispatch();
+   const inited = useSelector(getUserInited)
 
    useEffect(() => {
       dispatch(userActions.initAuth())
@@ -19,7 +20,9 @@ const App = () => {
          <Navbar />
          <div className='content-page'>
             <Sidebar />
-            <AppRouters />
+            {inited &&
+               <AppRouters />
+            }
          </div>
 
       </div>

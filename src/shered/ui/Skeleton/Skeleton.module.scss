@@ -1,0 +1,101 @@
+.Skeleton {
+
+   --padding: 15px;
+   box-shadow: 0 2px 10px 0 var(--skeleton-bg-color);
+   --blur-width: 600%;
+   --blur-height: 200%;
+   --blur-start-position: 130%;
+   --blur-end-position: 0%;
+   --blur-background: linear-gradient(130deg,
+         transparent 0,
+         transparent 35%,
+         var(--skeleton-gradient-400) 40%,
+         var(--skeleton-gradient-500) 50%,
+         var(--skeleton-gradient-600) 60%,
+         transparent 70%,
+         transparent 100%);
+
+   --image-width: 100%;
+   --image-height: 250px;
+   --image-x: 0px;
+   --image-y: 0px;
+   --image-position: var(--image-x) var(--image-y);
+   --image-skeleton: linear-gradient(var(--skeleton-bg-color), var(--skeleton-bg-color));
+
+   --title-width: calc(80%);
+   --title-height: 40px;
+   --title-x: var(--padding);
+   --title-y: calc(var(--image-height) + 25px);
+   --title-position: var(--title-x) var(--title-y);
+   --title-skeleton: linear-gradient(var(--skeleton-bg-color), var(--skeleton-bg-color));
+   --title-margin-bottom: 25px;
+
+   --text-gap: 18px;
+   --text-line-height: 18px;
+
+   --text-line-first-width: calc(100% - var(--padding) - var(--padding));
+   --text-line-first-height: var(--text-line-height);
+   --text-line-first-x: var(--padding);
+   --text-line-first-y: calc(var(--title-y) + var(--title-height) + var(--title-margin-bottom));
+   --text-line-first-position: var(--text-line-first-x) var(--text-line-first-y);
+   --text-line-first-skeleton: linear-gradient(var(--skeleton-bg-color), var(--skeleton-bg-color));
+
+   --text-line-second-width: calc(100% - var(--padding) - var(--padding));
+   --text-line-second-height: var(--text-line-height);
+   --text-line-second-x: var(--padding);
+   --text-line-second-y: calc(var(--text-line-first-y) + var(--text-line-first-height) + var(--text-gap));
+   --text-line-second-position: var(--text-line-second-x) var(--text-line-second-y);
+   --text-line-second-skeleton: linear-gradient(var(--skeleton-bg-color), var(--skeleton-bg-color));
+
+   --text-line-third-width: 70%;
+   --text-line-third-height: var(--text-line-height);
+   --text-line-third-x: var(--padding);
+   --text-line-third-y: calc(var(--text-line-second-y) + var(--text-line-second-height) + var(--text-gap));
+   --text-line-third-position: var(--text-line-third-x) var(--text-line-third-y);
+   --text-line-third-skeleton: linear-gradient(var(--skeleton-bg-color), var(--skeleton-bg-color));
+
+   width: 340px;
+   height: 450px;
+
+   background-color: var(--skeleton-bg-color);
+   background-repeat: no-repeat;
+
+   background-image:
+      var(--blur-background),
+      var(--image-skeleton),
+      var(--title-skeleton),
+      var(--text-line-first-skeleton),
+      var(--text-line-second-skeleton),
+      var(--text-line-third-skeleton);
+
+   background-size:
+      var(--blur-width) var(--blur-height),
+      var(--image-width) var(--image-height),
+      var(--title-width) var(--title-height),
+      var(--text-line-first-width) var(--text-line-first-height),
+      var(--text-line-second-width) var(--text-line-second-height),
+      var(--text-line-third-width) var(--text-line-third-height);
+
+   background-position:
+      var(--blur-start-position),
+      var(--image-position),
+      var(--title-position),
+      var(--text-line-first-position),
+      var(--text-line-second-position),
+      var(--text-line-third-position);
+
+   animation: loading 1.8s ease-in infinite;
+}
+
+@keyframes loading {
+   to {
+      background-position:
+         var(--blur-end-position),
+         var(--image-position),
+         var(--title-position),
+         var(--text-line-first-position),
+         var(--text-line-second-position),
+         var(--text-line-third-position);
+   }
+
+}

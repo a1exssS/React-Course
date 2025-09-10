@@ -3,7 +3,7 @@ import styles from './Avatar.module.scss'
 import { CSSProperties, ImgHTMLAttributes, useMemo } from 'react';
 
 interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
-   src: string;
+   src?: string;
    className?: string;
    size?: number;
 }

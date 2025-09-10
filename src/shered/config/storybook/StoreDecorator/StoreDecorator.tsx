@@ -4,15 +4,17 @@ import { ReactRenderer } from '@storybook/react-webpack5';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { profileReducer } from 'entities/Profile';
 import { ReducersList } from 'shered/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
 
 const defaultAsyncReducers: ReducersList = {
    login: loginReducer,
-   profile: profileReducer
+   profile: profileReducer,
+   articleDetails: articleDetailsReducer
 }
 
 export const StoreDecorator = (
    state: DeepPartial<StateSchema>,
-   asyncReducers?: ReducersList
+   asyncReducers?: ReducersList,
 ) =>
    (StoryComponent: PartialStoryFn<ReactRenderer, { [x: string]: any; }>) => (
 
