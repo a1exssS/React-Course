@@ -14,8 +14,8 @@ const data = {
    currency: CurrencyList.USD,
    firstname: 'alex',
    lastname: 'volkov',
-   username: 'a1exssio'
-
+   username: 'a1exssio',
+   id: '1'
 }
 
 describe('updateProfileData', () => {

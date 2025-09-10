@@ -4,12 +4,16 @@ import { ReactRenderer } from '@storybook/react-webpack5';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { profileReducer } from 'entities/Profile';
 import { ReducersList } from 'shered/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
+import { addCommentFormReducer } from 'features/AddCommentForm';
+import { articleDetailsReducer } from 'entities/Article';
+import { articleDitailsCommentsReducer } from 'pages/ArticlesDetailsPage/model/slice/articleDitailsCommentsSlice';
 
 const defaultAsyncReducers: ReducersList = {
    login: loginReducer,
    profile: profileReducer,
-   articleDetails: articleDetailsReducer
+   articleDetails: articleDetailsReducer,
+   addCommentForm: addCommentFormReducer,
+   ArticleDitailsComments: articleDitailsCommentsReducer
 }
 
 export const StoreDecorator = (

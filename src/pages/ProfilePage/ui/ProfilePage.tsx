@@ -1,5 +1,5 @@
 import { fetchProfileData, getError, getForm, getIsLoading, getProfileErrors, getReadonly, profileActions, ProfileCard, profileReducer } from 'entities/Profile'
-import { memo, useCallback, useEffect } from 'react'
+import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { DynamicModuleLoader, ReducersList } from 'shered/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shered/lib/hooks/useAppDispatch/useAppDispatch'
@@ -7,6 +7,8 @@ import { ProfileHeader } from './ProfilePageHeader/ProfileHeader'
 import { NumberRegex } from 'shered/lib/regex/NumberRegex/NumberRegex'
 import { CurrencyList } from 'entities/Currency'
 import { CountryList } from 'entities/Country'
+import { useInitialEffect } from 'shered/lib/hooks/useInitialEffect/useInitialEffect'
+import { useParams } from 'react-router-dom'
 
 const initialReducers: ReducersList = {
    profile: profileReducer
@@ -20,12 +22,14 @@ const ProfilePage = memo(() => {
    const isLoading = useSelector(getIsLoading)
    const readonly = useSelector(getReadonly)
    const errors = useSelector(getProfileErrors)
+   const { id } = useParams<{ id: string }>()
 
-   useEffect(() => {
-      if (__PROJECT__ !== 'storybook') {
-         dispatch(fetchProfileData())
+   useInitialEffect(() => {
+      console.log(id)
+      if (id) {
+         dispatch(fetchProfileData(id))
       }
-   }, [dispatch])
+   })
 
    const onChangeFirstName = useCallback((value?: string) => {
       dispatch(profileActions.updateProfile({ firstname: value || '' }))

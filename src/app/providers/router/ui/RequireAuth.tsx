@@ -8,7 +8,7 @@ interface RecuireAuthProps {
    children: React.ReactNode
 }
 
-export const RecuireAuth = ({ children }: RecuireAuthProps) => {
+export const RequireAuth = ({ children }: RecuireAuthProps) => {
    const isAuth = useSelector(getAuthData)
    const location = useLocation()
    if (!isAuth) {

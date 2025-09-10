@@ -2,7 +2,7 @@ import React, { memo, Suspense, useCallback } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { AppRoutesProps, routeConfig } from 'shered/config/routeConfig/routeConfig'
 import { PageLoader } from 'widgets/PageLoader'
-import { RecuireAuth } from './RecuireAuth'
+import { RequireAuth } from './RequireAuth'
 
 export const AppRouters = memo(() => {
 
@@ -10,7 +10,7 @@ export const AppRouters = memo(() => {
 
       return (
          <Route
-            element={route.authOnly ? <RecuireAuth>{route.element}</RecuireAuth> : route.element}
+            element={route.authOnly ? <RequireAuth>{route.element}</RequireAuth> : route.element}
             path={route.path}
             key={route.path}
          />

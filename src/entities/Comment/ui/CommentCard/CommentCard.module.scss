@@ -1,0 +1,23 @@
+.CommentCard {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   border: 1px solid var(--primary-color);
+   padding: 10px;
+}
+
+.CommentUser {
+   display: flex;
+   align-items: flex-end;
+   width: fit-content;
+   gap: 16px;
+
+   span {
+      font: var(--font-l);
+      color: var(--primary-color);
+   }
+}
+
+.CommentBody {
+   font: var(--font-m);
+}
