@@ -1,6 +1,6 @@
 import { AppLink, AppLinkTheme } from 'shered/ui/AppLink/AppLink'
 import cls from './SidebarItems.module.scss'
-import { SidebarItemType } from '../../model/sidebarLinks'
+import { SidebarItemType } from '../../model/types/sidebarLinks'
 import { memo } from 'react';
 import { classNames } from 'shered/lib/classNames/classNames';
 import { useSelector } from 'react-redux';

@@ -6,7 +6,8 @@ import { Button } from 'shered/ui/Button/Button';
 import ArrowLeft from 'shered/assets/icons/caret-left.svg'
 import ArrowRight from 'shered/assets/icons/caret-right.svg'
 import { AsideHeader } from '../AsideHeader/AsideHeader';
-import { SidebarItemList } from '../../model/sidebarLinks';
+import { useSelector } from 'react-redux';
+import { getSidebarLinks } from '../../model/selectors/getSidebarLinks';
 
 interface SidebarProps {
    className?: string;
@@ -15,6 +16,7 @@ interface SidebarProps {
 export const Sidebar = memo(({ className }: SidebarProps) => {
 
    const [collapsed, setCollapsed] = useState(false)
+   const sidebarItemList = useSelector(getSidebarLinks)
 
    const onToggle = () => {
       setCollapsed((e) => !e)
@@ -22,7 +24,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
 
    return (
       <aside data-testid='sidebar' className={classNames(cls.Asidebar, { [cls.collapsed]: collapsed }, [className])}>
-         {SidebarItemList.map((el) => {
+         {sidebarItemList.map((el) => {
             return <AsideHeader item={el} key={el.path} collapsed={collapsed} />
          })}
          <div className={cls.asideFooter}>

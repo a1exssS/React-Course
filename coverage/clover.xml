@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1757499263144" clover="3.2.0">
-  <project timestamp="1757499263145" name="All files">
-    <metrics statements="252" coveredstatements="196" conditionals="77" coveredconditionals="56" methods="100" coveredmethods="61" elements="429" coveredelements="313" complexity="0" loc="252" ncloc="252" packages="71" files="72" classes="72"/>
+<coverage generated="1757544904853" clover="3.2.0">
+  <project timestamp="1757544904853" name="All files">
+    <metrics statements="254" coveredstatements="197" conditionals="79" coveredconditionals="57" methods="100" coveredmethods="61" elements="433" coveredelements="315" complexity="0" loc="254" ncloc="254" packages="72" files="73" classes="73"/>
     <package name="config.jest">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="jestEmptyComponent.tsx" path="C:\Users\a1exss\Documents\Websites\React-Course\config\jest\jestEmptyComponent.tsx">
@@ -278,17 +278,19 @@
       </file>
     </package>
     <package name="src.entities.Profile.modal.services.fetchProfileData">
-      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <metrics statements="10" coveredstatements="9" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
       <file name="fetchProfileData.ts" path="C:\Users\a1exss\Documents\Websites\React-Course\src\entities\Profile\modal\services\fetchProfileData\fetchProfileData.ts">
-        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <metrics statements="10" coveredstatements="9" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
         <line num="5" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="10" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
+        <line num="8" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.entities.Profile.modal.services.updateProfileData">
@@ -489,6 +491,12 @@
     <package name="src.pages.ArticlesDetailsPage">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="C:\Users\a1exss\Documents\Websites\React-Course\src\pages\ArticlesDetailsPage\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.pages.ArticlesDetailsPage.model.types">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="ArticleDitailsCommentsSchema.ts" path="C:\Users\a1exss\Documents\Websites\React-Course\src\pages\ArticlesDetailsPage\model\types\ArticleDitailsCommentsSchema.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>

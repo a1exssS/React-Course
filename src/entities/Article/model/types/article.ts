@@ -1,8 +1,15 @@
+import { User } from "entities/User";
+
 export enum ArticleBlockType {
    CODE = "CODE",
    IMAGE = "IMAGE",
    TEXT = "TEXT",
    WARNING = "WARNING"
+}
+
+export enum ArticleView {
+   BIG = 'BIG',
+   SMALL = 'SMALL'
 }
 
 export interface ArticleBlockConfig {
@@ -42,6 +49,7 @@ export enum AritcleTypes {
 
 export interface Article {
    id: string;
+   user: User;
    title: string;
    subtitle: string;
    image: string;

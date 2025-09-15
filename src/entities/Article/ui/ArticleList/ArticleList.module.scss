@@ -1,0 +1,16 @@
+.ArticleList {
+
+   &.SMALL {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 230px));
+
+      gap: 30px;
+   }
+
+   &.BIG {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+   }
+}
