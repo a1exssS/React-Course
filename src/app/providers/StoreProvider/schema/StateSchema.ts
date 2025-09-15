@@ -7,6 +7,7 @@ import { UserSchema } from "entities/User";
 import { AddCommentFormSchema } from "features/AddCommentForm";
 import { loginSchema } from "features/AuthByUsername";
 import { ArticleDitailsCommentsSchema } from "pages/ArticlesDetailsPage";
+import { ArticlePageSchema } from "pages/ArticlesPage";
 import { To } from "react-router-dom";
 import { NavigateOptions } from "storybook/internal/router";
 
@@ -18,6 +19,7 @@ export interface StateSchema {
    articleDetails?: articleDetailsSchema;
    ArticleDitailsComments?: ArticleDitailsCommentsSchema;
    addCommentForm?: AddCommentFormSchema;
+   articlePage?: ArticlePageSchema;
 }
 
 export interface reducerManager {
