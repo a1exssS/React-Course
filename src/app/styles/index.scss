@@ -21,14 +21,6 @@ body {
    color: var(--primary-color);
 }
 
-.content-page {
-   display: flex;
-}
-
 .main {
-   padding: 20px;
-   flex-grow: 1;
-   overflow-y: auto;
-   width: 100%;
-   height: calc(100vh - var(--nav-height));
+   display: flex;
 }

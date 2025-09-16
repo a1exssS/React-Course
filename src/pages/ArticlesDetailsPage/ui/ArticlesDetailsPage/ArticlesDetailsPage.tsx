@@ -15,6 +15,7 @@ import { AddCommentForm } from 'features/AddCommentForm'
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
 import { Button, ThemeButton } from 'shered/ui/Button/Button'
 import { RoutePaths } from 'shered/config/routeConfig/routeConfig'
+import { Page } from 'shered/ui/Page/Page'
 
 const reducers: ReducersList = {
    ArticleDitailsComments: articleDitailsCommentsReducer
@@ -41,13 +42,15 @@ const ArticlesDetailsPage = () => {
 
    if (!id) {
       return (
-         <p className={styles.errorMessage}>Статья не найдена</p>
+         <Page>
+            <p className={styles.errorMessage}>Статья не найдена</p>
+         </Page>
       )
    }
 
    return (
       <DynamicModuleLoader reducers={reducers}>
-         <section className={classNames(styles.Article)}>
+         <Page className={classNames(styles.Article)}>
             <Button theme={ThemeButton.OUTLINE} onClick={backToList}>Назад к списку</Button>
             <ArticleDetails id={id} />
             <h2 className={styles.CommentTitle}>Коментарии</h2>
@@ -57,7 +60,7 @@ const ArticlesDetailsPage = () => {
                isLoading={isLoading}
                comments={comments}
             />
-         </section>
+         </Page>
       </DynamicModuleLoader>
    )
 }

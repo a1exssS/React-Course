@@ -30,13 +30,13 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
    if (isAuth) {
       return (
-         <nav className={classNames(cls.nav, {}, [className])}>
+         <header className={classNames(cls.nav, {}, [className])}>
             <div className={cls.links}>
                <Button onClick={onLogout} style={{ color: "var(--inverted-primary-color)" }}>
                   Выйти
                </Button>
             </div>
-         </nav>
+         </header>
       )
    }
 

@@ -1,0 +1,13 @@
+.section {
+   padding: 20px;
+   flex-grow: 1;
+   overflow-y: auto;
+   width: 100%;
+   height: calc(100vh - var(--nav-height));
+}
+
+.container {
+   width: 100%;
+   height: inherit;
+   flex-grow: 1;
+}

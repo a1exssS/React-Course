@@ -1,10 +1,11 @@
 import { memo } from "react";
+import { Page } from "shered/ui/Page/Page";
 
 const AboutPage = memo(() => {
    return (
-      <div>
+      <Page>
          ABOUT PAGE
-      </div>
+      </Page>
    );
 });
 

@@ -19,11 +19,9 @@ export const AppRouters = memo(() => {
 
    return (
       <Suspense fallback={<PageLoader />}>
-         <main className='main'>
-            <Routes>
-               {Object.values(routeConfig).map(renderWithWrapper)}
-            </Routes>
-         </main>
+         <Routes>
+            {Object.values(routeConfig).map(renderWithWrapper)}
+         </Routes>
       </Suspense>
    )
 })

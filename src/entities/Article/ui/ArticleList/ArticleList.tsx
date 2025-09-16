@@ -14,25 +14,22 @@ interface ArticleListProps {
 
 export const ArticleList = memo(({ articles, className, isLoading, view = ArticleView.SMALL }: ArticleListProps) => {
 
-   if (isLoading) {
-      return <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
-         {new Array(view === ArticleView.SMALL ? 9 : 3)
-            .fill(0)
-            .map((item, index) => {
-               return <ArticleListItemSkeleton view={view} key={index} />
-            })}
-      </div>
-   }
-
    const renderArticle = (article: Article) => {
       return <ArticleListItem article={article} view={view} key={article.id} />
    }
 
    return (
       <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
+
          {articles.length ?
             articles.map(renderArticle) :
             null
+         }
+         {isLoading && new Array(view === ArticleView.SMALL ? 9 : 3)
+            .fill(0)
+            .map((item, index) => {
+               return <ArticleListItemSkeleton view={view} key={index} />
+            })
          }
       </div>
    )

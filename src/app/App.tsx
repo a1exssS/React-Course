@@ -18,12 +18,12 @@ const App = () => {
    return (
       <div className={classNames('app')}>
          <Navbar />
-         <div className='content-page'>
+         <main className='main'>
             <Sidebar />
             {inited &&
                <AppRouters />
             }
-         </div>
+         </main>
 
       </div>
    );

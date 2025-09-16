@@ -3,7 +3,7 @@
    &.SMALL {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 230px));
-
+      width: 100%;
       gap: 30px;
    }
 

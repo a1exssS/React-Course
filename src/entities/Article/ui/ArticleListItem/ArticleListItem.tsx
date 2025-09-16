@@ -9,6 +9,7 @@ import { Button, ThemeButton } from 'shered/ui/Button/Button';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { useNavigate } from 'react-router-dom';
 import { RoutePaths } from 'shered/config/routeConfig/routeConfig';
+import { AppLink } from 'shered/ui/AppLink/AppLink';
 
 interface ArticleListItemProps {
    article: Article;
@@ -68,8 +69,8 @@ export const ArticleListItem = memo(({ article, className, view }: ArticleListIt
 
    return (
 
-      <div className={classNames(styles.ArticleLayoutSmall, {}, [className, styles[view]])}>
-         <Card className={styles.card} onClick={onOpenArticle}>
+      <AppLink to={RoutePaths.articles_details + article.id} className={classNames(styles.ArticleLayoutSmall, {}, [className, styles[view]])}>
+         <Card className={styles.card}>
             <div className={styles.imageWrapper}>
                <img src={article.image} alt={article.title} className={styles.image} />
                <span className={styles.createdAt}>{article.createdAt}</span>
@@ -80,6 +81,6 @@ export const ArticleListItem = memo(({ article, className, view }: ArticleListIt
             </div>
             <h3 className={styles.Title}>{article.title}</h3>
          </Card>
-      </div>
+      </AppLink>
    )
 })

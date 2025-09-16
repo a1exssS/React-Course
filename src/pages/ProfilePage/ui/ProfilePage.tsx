@@ -9,6 +9,7 @@ import { CurrencyList } from 'entities/Currency'
 import { CountryList } from 'entities/Country'
 import { useInitialEffect } from 'shered/lib/hooks/useInitialEffect/useInitialEffect'
 import { useParams } from 'react-router-dom'
+import { Page } from 'shered/ui/Page/Page'
 
 const initialReducers: ReducersList = {
    profile: profileReducer
@@ -60,27 +61,29 @@ const ProfilePage = memo(() => {
 
    return (
       <DynamicModuleLoader reducers={initialReducers}>
-         <ProfileHeader readonly={readonly} />
-         {errors?.length && errors.map((arg) => {
-            return <span key={arg}>{arg}</span>
-         })}
-         <ProfileCard
-            data={formData}
-            isLoading={isLoading}
-            error={error}
-            readonly={readonly}
-            onChangeEvents={{
-               onChangeFirstName,
-               onChangeLastName,
-               onChangeCity,
-               onChangeAge,
-               onChangeUsername,
-               onChangeAvatar,
-               onChangeCurrency,
-               onChangeCountry
-            }}
+         <Page>
+            <ProfileHeader readonly={readonly} />
+            {errors?.length && errors.map((arg) => {
+               return <span key={arg}>{arg}</span>
+            })}
+            <ProfileCard
+               data={formData}
+               isLoading={isLoading}
+               error={error}
+               readonly={readonly}
+               onChangeEvents={{
+                  onChangeFirstName,
+                  onChangeLastName,
+                  onChangeCity,
+                  onChangeAge,
+                  onChangeUsername,
+                  onChangeAvatar,
+                  onChangeCurrency,
+                  onChangeCountry
+               }}
 
-         />
+            />
+         </Page>
       </DynamicModuleLoader>
    )
 })
