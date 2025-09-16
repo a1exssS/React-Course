@@ -9,7 +9,7 @@ import { CurrencyList } from 'entities/Currency'
 import { CountryList } from 'entities/Country'
 import { useInitialEffect } from 'shered/lib/hooks/useInitialEffect/useInitialEffect'
 import { useParams } from 'react-router-dom'
-import { Page } from 'shered/ui/Page/Page'
+import { Page } from 'widgets/Page/Page'
 
 const initialReducers: ReducersList = {
    profile: profileReducer

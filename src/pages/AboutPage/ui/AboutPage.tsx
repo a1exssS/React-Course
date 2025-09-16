@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Page } from "shered/ui/Page/Page";
+import { Page } from "widgets/Page/Page";
 
 const AboutPage = memo(() => {
    return (

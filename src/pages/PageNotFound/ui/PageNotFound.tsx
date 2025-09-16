@@ -1,6 +1,6 @@
 import { classNames } from 'shered/lib/classNames/classNames'
 import styles from './PageNotFound.module.scss'
-import { Page } from 'shered/ui/Page/Page'
+import { Page } from 'widgets/Page/Page'
 
 export const PageNotFound = () => {
    return (

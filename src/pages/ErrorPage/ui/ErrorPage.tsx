@@ -1,7 +1,7 @@
 import { classNames } from 'shered/lib/classNames/classNames'
 import styles from './ErrorPage.module.scss'
 import { Button } from 'shered/ui/Button/Button'
-import { Page } from 'shered/ui/Page/Page'
+import { Page } from 'widgets/Page/Page'
 
 export const ErrorPage = () => {
    return (

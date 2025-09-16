@@ -4,6 +4,7 @@ import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
 import { createReducerManager } from './reducerManager'
 import { $api } from 'shered/api/api'
+import { scrollHandlerReducer } from 'features/ScrollHandler'
 
 
 export function createReduxStore(
@@ -15,6 +16,7 @@ export function createReduxStore(
       ...asyncReducers,
       counter: counterReducer,
       user: userReducer,
+      scrollPosition: scrollHandlerReducer
    }
 
    const extraArg: ThunkExtraArg = {

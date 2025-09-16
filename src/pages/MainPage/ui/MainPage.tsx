@@ -1,6 +1,6 @@
 import { Counter } from "entities/Counter";
 import { memo } from "react";
-import { Page } from "shered/ui/Page/Page";
+import { Page } from "widgets/Page/Page";
 
 const MainPage = memo(() => {
    return (

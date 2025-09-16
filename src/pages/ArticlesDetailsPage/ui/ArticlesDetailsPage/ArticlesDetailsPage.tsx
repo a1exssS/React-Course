@@ -15,7 +15,7 @@ import { AddCommentForm } from 'features/AddCommentForm'
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
 import { Button, ThemeButton } from 'shered/ui/Button/Button'
 import { RoutePaths } from 'shered/config/routeConfig/routeConfig'
-import { Page } from 'shered/ui/Page/Page'
+import { Page } from 'widgets/Page/Page'
 
 const reducers: ReducersList = {
    ArticleDitailsComments: articleDitailsCommentsReducer

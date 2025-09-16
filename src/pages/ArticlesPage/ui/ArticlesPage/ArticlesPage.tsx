@@ -12,7 +12,7 @@ import HorizontalIcon from 'shered/assets/icons/horizontal-lined.svg'
 import TableIcon from 'shered/assets/icons/table-lined.svg'
 import { Button } from 'shered/ui/Button/Button'
 import { classNames } from 'shered/lib/classNames/classNames'
-import { Page } from 'shered/ui/Page/Page'
+import { Page } from 'widgets/Page/Page'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 
@@ -36,7 +36,6 @@ const ArticlesPage = () => {
       dispatch(initArticlesPage())
    })
 
-
    const setViewBig = useCallback(() => {
       dispatch(articlePageActions.setView(ArticleView.BIG))
    }, [dispatch])
@@ -52,7 +51,7 @@ const ArticlesPage = () => {
 
    return (
       <DynamicModuleLoader reducers={rootReducer} removeAfterUnmount={false}>
-         <Page onScrollEnd={onLoadNextPage} className={styles.ArticlesPage}>
+         <Page onScrollEnd={onLoadNextPage} className={styles.ArticlesPage} watchScrollPosition>
             <div className={styles.ArticlesHeader}>
 
                <Button

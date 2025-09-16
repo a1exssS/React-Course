@@ -6,12 +6,15 @@ import { ProfileSchema } from "entities/Profile";
 import { UserSchema } from "entities/User";
 import { AddCommentFormSchema } from "features/AddCommentForm";
 import { loginSchema } from "features/AuthByUsername";
+import { ScrollHandlerSchema } from "features/ScrollHandler";
 import { ArticleDitailsCommentsSchema } from "pages/ArticlesDetailsPage";
 import { ArticlePageSchema } from "pages/ArticlesPage";
 
 export interface StateSchema {
    counter: counterSchema;
    user: UserSchema;
+   scrollPosition: ScrollHandlerSchema
+
    login?: loginSchema;
    profile?: ProfileSchema;
    articleDetails?: articleDetailsSchema;
