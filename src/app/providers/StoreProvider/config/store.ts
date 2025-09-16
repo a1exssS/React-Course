@@ -4,14 +4,11 @@ import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
 import { createReducerManager } from './reducerManager'
 import { $api } from 'shered/api/api'
-import { To } from 'react-router-dom'
-import { NavigateOptions } from 'storybook/internal/router'
 
 
 export function createReduxStore(
    initialState?: StateSchema,
    asyncReducers?: ReducersMapObject<StateSchema>,
-   navigate?: (to: To, options?: NavigateOptions) => void,
 ) {
 
    const rootReducers: ReducersMapObject<StateSchema> = {
@@ -22,7 +19,6 @@ export function createReduxStore(
 
    const extraArg: ThunkExtraArg = {
       api: $api,
-      navigate
    }
 
    const reducerManager = createReducerManager(rootReducers)

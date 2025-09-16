@@ -7,3 +7,4 @@ export const getIsLoading = (state: StateSchema) => state.articlePage?.isLoading
 export const getLimit = (state: StateSchema) => state.articlePage?.limit || 9
 export const getPageNum = (state: StateSchema) => state.articlePage?.page || 1
 export const getHasMore = (state: StateSchema) => state.articlePage?.hasMore || false
+export const getIsInited = (state: StateSchema) => state.articlePage?._inited || false

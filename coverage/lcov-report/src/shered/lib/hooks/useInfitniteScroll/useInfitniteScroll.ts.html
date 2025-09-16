@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>0/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>0/13</span>
             </div>
         
             
@@ -101,21 +101,10 @@
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -126,12 +115,25 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -149,12 +151,14 @@ export interface useInfitniteScrollOptions {
 }
 export function <span class="fstat-no" title="function not covered" >useInfitniteScroll(</span>{ callback, triggerRef, wrapperRef }: useInfitniteScrollOptions) {
 <span class="cstat-no" title="statement not covered" >   useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+      const wrapperElement = <span class="cstat-no" title="statement not covered" >wrapperRef.current</span>
+      const triggerElement = <span class="cstat-no" title="statement not covered" >triggerRef.current</span>
 &nbsp;
       let observer: IntersectionObserver | null = <span class="cstat-no" title="statement not covered" >null</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      if (callback) {</span>
          const options = <span class="cstat-no" title="statement not covered" >{</span>
-            root: wrapperRef.current,
+            root: wrapperElement,
             rootMargin: "0px",
             scrollMargin: "0px",
             threshold: 1.0,
@@ -165,12 +169,11 @@ export function <span class="fstat-no" title="function not covered" >useInfitnit
 <span class="cstat-no" title="statement not covered" >               callback()</span>
             }
          }, options);
-<span class="cstat-no" title="statement not covered" >         observer.observe(triggerRef.current)</span>
+<span class="cstat-no" title="statement not covered" >         observer.observe(triggerElement)</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >         return <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            if (observer) {</span>
-               // eslint-disable-next-line
-<span class="cstat-no" title="statement not covered" >               observer.unobserve(triggerRef.current)</span>
+<span class="cstat-no" title="statement not covered" >            if (observer &amp;&amp; triggerElement) {</span>
+<span class="cstat-no" title="statement not covered" >               observer.unobserve(triggerElement)</span>
             }
          }
 &nbsp;
@@ -184,7 +187,7 @@ export function <span class="fstat-no" title="function not covered" >useInfitnit
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-16T17:28:35.139Z
+                at 2025-09-16T18:02:12.670Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

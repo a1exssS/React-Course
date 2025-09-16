@@ -6,11 +6,10 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
    const reducers = { ...initialReducers }
 
    let combinedReducer = combineReducers(reducers)
-   let keysToRemove: StateSchemaKeys[] = []
+   let keysToRemove: StateSchemaKeys[] = [];
 
    return {
       getReducerMap: () => reducers,
-
       reduce: (state: StateSchema, action: AnyAction) => {
          if (keysToRemove.length > 0) {
             state = { ...state }
@@ -40,6 +39,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
          delete reducers[key]
          keysToRemove.push(key)
          combinedReducer = combineReducers(reducers)
-      }
+      },
+
    }
 }
