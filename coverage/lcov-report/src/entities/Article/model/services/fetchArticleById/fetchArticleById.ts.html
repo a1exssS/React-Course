@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -87,20 +87,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { createAsyncThunk } from "@reduxjs/toolkit"
@@ -109,18 +109,18 @@ import { Article } from "../../types/article";
 &nbsp;
 export const fetchArticleById = createAsyncThunk&lt;Article, string, ThunkConfig&lt;string&gt;&gt;(
    'articleDetails/fetchArticleById',
-<span class="fstat-no" title="function not covered" >   as</span>ync (articleId, { extra, rejectWithValue }) =&gt; {
-<span class="cstat-no" title="statement not covered" >      try {</span>
-         const response = <span class="cstat-no" title="statement not covered" >await extra.api.get&lt;Article&gt;('/articles/' + articleId)</span>
+   async (articleId, { extra, rejectWithValue }) =&gt; {
+      try {
+         const response = await extra.api.get&lt;Article&gt;('/articles/' + articleId)
 &nbsp;
-<span class="cstat-no" title="statement not covered" >         if (!response.data) {</span>
-<span class="cstat-no" title="statement not covered" >            throw new Error()</span>
+         if (!response.data) {
+            throw new Error()
          }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >         return response.data</span>
+         return response.data
       } catch (e) {
-<span class="cstat-no" title="statement not covered" >         console.log(e)</span>
-<span class="cstat-no" title="statement not covered" >         return rejectWithValue('Неудалось получить статью')</span>
+         console.log(e)
+         return rejectWithValue('Неудалось получить статью')
       }
    },
 )</pre></td></tr></table></pre>
@@ -130,7 +130,7 @@ export const fetchArticleById = createAsyncThunk&lt;Article, string, ThunkConfig
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-16T18:02:12.670Z
+                at 2025-09-21T17:03:11.581Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

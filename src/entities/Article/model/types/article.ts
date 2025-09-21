@@ -7,6 +7,12 @@ export enum ArticleBlockType {
    WARNING = "WARNING"
 }
 
+export enum ArticleSortField {
+   VIEWS = 'views',
+   TITLE = 'title',
+   CREATED = 'createdAt'
+}
+
 export enum ArticleView {
    BIG = 'BIG',
    SMALL = 'SMALL'
@@ -42,6 +48,7 @@ export type ArticleBlock = ArticleTextBlock | ArticleImageBlock | ArticleWarning
 
 
 export enum AritcleTypes {
+   ALL = "ALL",
    IT = "IT",
    SCIENCE = "CIENCE",
    ECONOMICS = "ECONOMICS"

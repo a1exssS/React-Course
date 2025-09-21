@@ -28,3 +28,19 @@
    color: var(--success-color);
    background: transparent;
 }
+
+.outline-circled {
+   padding: 10px 15px;
+   background-color: var(--card-bg);
+   border: 1px solid var(--primary-color);
+   border-radius: 99999px;
+
+   &-active {
+      padding: 10px 15px;
+      background-color: var(--card-bg);
+      pointer-events: none;
+      opacity: .8;
+      border: 0;
+      border-radius: 99999px;
+   }
+}

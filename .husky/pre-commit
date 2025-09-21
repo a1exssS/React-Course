@@ -1,6 +1,6 @@
-# npm install
-# npm run build:prod
-# npm run lint:ts
-# npm run lint:scss
-# npm run unit:test
-# npm run storybook:build
+npm install
+npm run build:prod
+npm run lint:ts
+npm run lint:scss
+npm run unit:test
+npm run storybook:build

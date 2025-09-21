@@ -40,7 +40,6 @@ export const Page = ({ children, className, onScrollEnd, watchScrollPosition = f
    })
 
    const onScrollHandler = useThrottle((e: React.UIEvent<HTMLElement>) => {
-      console.log('scroll')
       if (watchScrollPosition) {
          dispatch(scrollHandlerActions.setScrollPosition({
             position: e.currentTarget.scrollTop, path: pathname
@@ -53,7 +52,9 @@ export const Page = ({ children, className, onScrollEnd, watchScrollPosition = f
       <section ref={wrapperRef} className={styles.section} onScroll={onScrollHandler}>
          <div className={classNames(styles.container, {}, [className])}>
             {children}
-            <div ref={triggerRef} />
+            {onScrollEnd &&
+               <div className={styles.trigger} ref={triggerRef} />
+            }
          </div>
       </section>
    )

@@ -1,0 +1,41 @@
+.horizontalButton {
+   margin-left: auto;
+   display: flex;
+   align-items: center;
+}
+
+.tableButton {
+   margin-left: 5px;
+   display: flex;
+   align-items: center;
+}
+
+.selected {
+   opacity: .6;
+}
+
+.ArticlesHeader {
+   display: flex;
+   width: 100%;
+   flex-direction: column;
+   gap: 10px;
+   margin-top: 10px;
+   margin-bottom: 20px;
+}
+
+.ArticlesControllPanel {
+   display: flex;
+   width: 100%;
+   gap: 10px;
+   justify-content: space-between;
+}
+
+.controllButtons {
+   display: flex;
+
+}
+
+.search {
+   width: 100%;
+   max-width: unset;
+}

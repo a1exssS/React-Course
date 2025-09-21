@@ -1,23 +1,38 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { ThunkConfig } from "app/providers/StoreProvider/schema/StateSchema";
-import { Article } from "entities/Article";
-import { getLimit } from "../../selectors/getArticlesData/getArticlesSelectors";
+import { AritcleTypes, Article } from "entities/Article";
+import { getLimit, getOrder, getPageNum, getSearch, getSort, getType } from "../../selectors/getArticlesData/getArticlesSelectors";
+import { addQueryParams } from "shered/lib/hooks/url/addQueryParams";
 
 interface fetchArticlesListProps {
-   page: number
+   replace?: boolean
 }
 
 export const fetchArticlesList = createAsyncThunk<Article[], fetchArticlesListProps, ThunkConfig<string>>(
    'articleList/fetchArticlesList',
-   async ({ page = 1 }, { extra, rejectWithValue, getState }) => {
+   async ({ replace = false }, { extra, rejectWithValue, getState }) => {
 
       const limit = getLimit(getState())
+
+      const sort = getSort(getState())
+      const order = getOrder(getState())
+      const search = getSearch(getState())
+      const page = getPageNum(getState())
+      const type = getType(getState())
+
       try {
+         addQueryParams({
+            sort, search, order, type
+         })
          const response = await extra.api.get<Article[]>(`/articles`, {
             params: {
                _expand: 'user',
                _limit: limit,
-               _page: page
+               _page: page,
+               _sort: sort,
+               _order: order,
+               q: search,
+               type: type === AritcleTypes.ALL ? undefined : type
             }
          })
 

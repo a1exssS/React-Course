@@ -1,8 +1,8 @@
-import { Select } from 'shered/ui/Select/Select'
+import { Select, SelectOption } from 'shered/ui/Select/Select'
 import { CurrencyList } from '../model/types/currency'
 import { memo, useCallback } from 'react';
 
-const options = [
+const options: SelectOption<CurrencyList, CurrencyList>[] = [
    { content: CurrencyList.RUB, value: CurrencyList.RUB },
    { content: CurrencyList.EUR, value: CurrencyList.EUR },
    { content: CurrencyList.USD, value: CurrencyList.USD },

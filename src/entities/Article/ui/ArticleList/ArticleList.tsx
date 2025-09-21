@@ -18,6 +18,14 @@ export const ArticleList = memo(({ articles, className, isLoading, view = Articl
       return <ArticleListItem article={article} view={view} key={article.id} />
    }
 
+   if (!isLoading && !articles.length) {
+      return (
+         <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
+            <p>Таких статей нет D:</p>
+         </div>
+      )
+   }
+
    return (
       <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
 

@@ -12,5 +12,7 @@ export default {
       "color-function-notation": null,
       "length-zero-no-unit": null,
       "keyframes-name-pattern": null,
+      "no-descending-specificity": null,
+      "rule-empty-line-before": null
    }
 };

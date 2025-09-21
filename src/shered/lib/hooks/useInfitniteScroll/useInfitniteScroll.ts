@@ -36,5 +36,4 @@ export function useInfitniteScroll({ callback, triggerRef, wrapperRef }: useInfi
 
       }
    }, [wrapperRef, triggerRef, callback])
-
 }

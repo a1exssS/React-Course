@@ -1,22 +1,24 @@
-import React, { ChangeEvent, memo, useCallback, useMemo } from 'react'
+import React, { ChangeEvent, useCallback, useMemo } from 'react'
 import { classNames } from 'shered/lib/classNames/classNames'
 import styles from './Select.module.scss'
 
-interface SelectOption {
-   value?: string;
-   content?: string;
+export interface SelectOption<T, K> {
+   value?: T;
+   content?: K;
 }
 
-interface SelectProps {
+interface SelectProps<T extends string> {
    className?: string;
    label?: string;
-   options?: SelectOption[];
-   value?: string;
-   onChange?: (value: string) => void;
+   options?: SelectOption<string, string>[];
+   value?: T;
+   onChange?: (value: T) => void;
    readonly?: boolean;
 }
 
-export const Select = memo(({ className, label, onChange, options, value, readonly }: SelectProps) => {
+export const Select = <T extends string>(
+   { className, label, onChange, options, value, readonly }: SelectProps<T>
+) => {
 
    const optionList = useMemo(() => {
       return options?.map((el) => (
@@ -25,7 +27,7 @@ export const Select = memo(({ className, label, onChange, options, value, readon
    }, [options])
 
    const onChangeHandler = useCallback((e: ChangeEvent<HTMLSelectElement>) => {
-      onChange?.(e.target.value)
+      onChange?.(e.target.value as T)
    }, [onChange])
 
    return (
@@ -45,4 +47,4 @@ export const Select = memo(({ className, label, onChange, options, value, readon
          </select>
       </div>
    )
-})
+}
