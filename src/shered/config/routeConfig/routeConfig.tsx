@@ -1,4 +1,6 @@
 import { AboutPage } from "pages/AboutPage"
+import { ArticlesDetailsCreatePage } from "pages/ArticlesDetailsCreatePage"
+import { ArticlesDetailsEdditPage } from "pages/ArticlesDetailsEdditPage"
 import { ArticlesDetailsPage } from "pages/ArticlesDetailsPage"
 import { ArticlesPage } from "pages/ArticlesPage"
 import { MainPage } from "pages/MainPage"
@@ -15,7 +17,9 @@ export enum AppRoutes {
    ABOUT = 'about',
    PROFILE = 'profile',
    ARTICLES = 'articles',
-   ARTICLES_DETAIL = 'articles_details',
+   ARTICLE_DETAIL = 'article_details',
+   ARTICLE_CREATE = 'article_create',
+   ARTICLE_EDDIT = 'article_eddit',
 
    NOT_FOUND = 'not_found'
 }
@@ -25,7 +29,9 @@ export const RoutePaths: Record<AppRoutes, string> = {
    main: '/',
    profile: '/profile/', // +id
    articles: '/articles',
-   articles_details: '/articles/', // +id
+   article_details: '/articles/', // +id
+   article_create: '/articles/create',
+   article_eddit: '/articles/:id/eddit', // +id
 
    not_found: '*'
 }
@@ -49,10 +55,20 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
       element: <ArticlesPage />,
       authOnly: true
    },
-   articles_details: {
-      path: RoutePaths.articles_details + ':id',
+   article_details: {
+      path: RoutePaths.article_details + ':id',
       element: <ArticlesDetailsPage />,
       authOnly: true
+   },
+   article_create: {
+      path: RoutePaths.article_create,
+      element: <ArticlesDetailsCreatePage />,
+      authOnly: true
+   },
+   article_eddit: {
+      path: RoutePaths.article_eddit,
+      element: <ArticlesDetailsEdditPage />,
+      authOnly: true,
    },
 
 

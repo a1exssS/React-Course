@@ -15,6 +15,13 @@
    background: transparent;
 }
 
+.outline-inverted {
+   padding: 10px 15px;
+   border: 1px solid var(--inverted-primary-color);
+   color: var(--inverted-primary-color);
+   background: transparent;
+}
+
 .outline-red {
    padding: 10px 15px;
    border: 1px solid var(--error-color);

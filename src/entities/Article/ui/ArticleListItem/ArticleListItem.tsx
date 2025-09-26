@@ -1,13 +1,11 @@
 import { classNames } from 'shered/lib/classNames/classNames';
 import { Article, ArticleBlockType, ArticleTextBlock, ArticleView } from '../../model/types/article'
-import React, { memo, useCallback } from 'react'
+import { memo } from 'react'
 import styles from './ArticleListItem.module.scss'
 import ViewsIcon from 'shered/assets/icons/eye.svg'
 import { Card } from 'shered/ui/Card/Card';
 import { Avatar } from 'shered/ui/Avatar/Avatar';
-import { Button, ThemeButton } from 'shered/ui/Button/Button';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { useNavigate } from 'react-router-dom';
 import { RoutePaths } from 'shered/config/routeConfig/routeConfig';
 import { AppLink } from 'shered/ui/AppLink/AppLink';
 
@@ -25,12 +23,6 @@ export const ArticleListItem = memo(({ article, className, view }: ArticleListIt
          <ViewsIcon className={styles.viewsIcon} />
       </>
    )
-
-   const navigate = useNavigate()
-
-   const onOpenArticle = useCallback(() => {
-      navigate(RoutePaths.articles_details + article.id)
-   }, [article.id, navigate])
 
    if (view === ArticleView.BIG) {
 
@@ -57,9 +49,9 @@ export const ArticleListItem = memo(({ article, className, view }: ArticleListIt
                   <ArticleTextBlockComponent block={textBlock} className={styles.textBlock} />
                }
                <div className={styles.footer}>
-                  <Button onClick={onOpenArticle} theme={ThemeButton.OUTLINE}>
+                  <AppLink target='_blank' to={RoutePaths.article_details + article.id} className={styles.footerLink} >
                      Читать далее...
-                  </Button>
+                  </AppLink>
                   {views}
                </div>
             </Card>
@@ -69,7 +61,7 @@ export const ArticleListItem = memo(({ article, className, view }: ArticleListIt
 
    return (
 
-      <AppLink to={RoutePaths.articles_details + article.id} className={classNames(styles.ArticleLayoutSmall, {}, [className, styles[view]])}>
+      <AppLink to={RoutePaths.article_details + article.id} className={classNames(styles.ArticleLayoutSmall, {}, [className, styles[view]])} target='_blank'>
          <Card className={styles.card}>
             <div className={styles.imageWrapper}>
                <img src={article.image} alt={article.title} className={styles.image} />

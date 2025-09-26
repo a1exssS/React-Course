@@ -3,31 +3,37 @@ import { classNames } from 'shered/lib/classNames/classNames';
 import styles from './Tabs.module.scss'
 import { Button, ThemeButton } from '../Button/Button';
 
-export interface TabItem {
-   value: string;
-   content: React.ReactNode
+export interface TabItem<T extends string> {
+   value: T;
+   content: React.ReactNode;
 }
 
-interface TabsProps {
+interface TabsProps<T extends string> {
    className?: string;
-   tabs: TabItem[];
-   value: string;
-   onTabClick: (tab: TabItem) => void
+   tabs: TabItem<T>[];
+   value: T;
+   onTabClick: (tab: TabItem<T>) => void;
 }
 
-export const Tabs = ({ onTabClick, tabs, value, className }: TabsProps) => {
+export const Tabs = <T extends string>({
+   onTabClick,
+   tabs,
+   value,
+   className,
+}: TabsProps<T>) => {
 
-   const onClickHandler = useCallback((tab: TabItem) => {
-      return () => {
+   const onClickHandler = useCallback(
+      (tab: TabItem<T>) => () => {
          onTabClick(tab)
-      }
-   }, [onTabClick])
+      },
+      [onTabClick]
+   )
 
    return (
       <div className={classNames(styles.Tabs, {}, [className])}>
-         {tabs.map((tab) => {
-            return <Button
-               isActive={tab.value === value ? true : false}
+         {tabs.map((tab) => (
+            <Button
+               isActive={tab.value === value}
                theme={ThemeButton.OUTLINE_CIRCLED}
                className={styles.Tab}
                key={tab.value}
@@ -35,7 +41,7 @@ export const Tabs = ({ onTabClick, tabs, value, className }: TabsProps) => {
             >
                {tab.content}
             </Button>
-         })}
+         ))}
       </div>
    )
 }

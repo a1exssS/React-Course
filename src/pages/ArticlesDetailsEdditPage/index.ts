@@ -1,0 +1,1 @@
+export { ArticlesDetailsEdditPageAsync as ArticlesDetailsEdditPage } from './ui/ArticlesDetailsEdditPage.async'

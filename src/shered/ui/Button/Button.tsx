@@ -4,6 +4,7 @@ import { ButtonHTMLAttributes, memo } from "react"
 
 export enum ThemeButton {
    OUTLINE = 'outline',
+   OUTLINE_INVERTED = 'outline-inverted',
    OUTLINE_RED = 'outline-red',
    OUTLINE_GREEN = 'outline-green',
    OUTLINE_CIRCLED = 'outline-circled',

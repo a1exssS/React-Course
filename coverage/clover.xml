@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1758474191779" clover="3.2.0">
-  <project timestamp="1758474191779" name="All files">
-    <metrics statements="485" coveredstatements="259" conditionals="186" coveredconditionals="71" methods="179" coveredmethods="70" elements="850" coveredelements="400" complexity="0" loc="485" ncloc="485" packages="102" files="104" classes="104"/>
+<coverage generated="1758474379986" clover="3.2.0">
+  <project timestamp="1758474379986" name="All files">
+    <metrics statements="485" coveredstatements="256" conditionals="186" coveredconditionals="67" methods="179" coveredmethods="68" elements="850" coveredelements="391" complexity="0" loc="485" ncloc="485" packages="102" files="104" classes="104"/>
     <package name="config.jest">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="jestEmptyComponent.tsx" path="C:\Users\a1exss\Documents\Websites\React-Course\config\jest\jestEmptyComponent.tsx">
@@ -667,16 +667,16 @@
       </file>
     </package>
     <package name="src.pages.ArticlesPage.model.selectors.getArticlesData">
-      <metrics statements="11" coveredstatements="11" conditionals="18" coveredconditionals="7" methods="11" coveredmethods="4"/>
+      <metrics statements="11" coveredstatements="11" conditionals="18" coveredconditionals="5" methods="11" coveredmethods="3"/>
       <file name="getArticlesSelectors.ts" path="C:\Users\a1exss\Documents\Websites\React-Course\src\pages\ArticlesPage\model\selectors\getArticlesData\getArticlesSelectors.ts">
-        <metrics statements="11" coveredstatements="11" conditionals="18" coveredconditionals="7" methods="11" coveredmethods="4"/>
+        <metrics statements="11" coveredstatements="11" conditionals="18" coveredconditionals="5" methods="11" coveredmethods="3"/>
         <line num="4" count="4" type="cond" truecount="0" falsecount="2"/>
         <line num="5" count="4" type="cond" truecount="0" falsecount="2"/>
         <line num="6" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="7" count="4" type="cond" truecount="0" falsecount="2"/>
         <line num="8" count="4" type="cond" truecount="1" falsecount="1"/>
         <line num="9" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="10" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="4" type="cond" truecount="0" falsecount="2"/>
         <line num="11" count="4" type="stmt"/>
         <line num="12" count="4" type="stmt"/>
         <line num="13" count="4" type="cond" truecount="0" falsecount="2"/>
@@ -717,13 +717,13 @@
       </file>
     </package>
     <package name="src.pages.ArticlesPage.model.services.initArticlesPage">
-      <metrics statements="17" coveredstatements="4" conditionals="10" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <metrics statements="17" coveredstatements="1" conditionals="10" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="initArticlesPage.ts" path="C:\Users\a1exss\Documents\Websites\React-Course\src\pages\ArticlesPage\model\services\initArticlesPage\initArticlesPage.ts">
-        <metrics statements="17" coveredstatements="4" conditionals="10" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <metrics statements="17" coveredstatements="1" conditionals="10" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="9" count="1" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="13" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="14" count="1" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="14" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
@@ -960,9 +960,9 @@
         <line num="24" count="13" type="stmt"/>
         <line num="26" count="13" type="stmt"/>
         <line num="27" count="13" type="stmt"/>
-        <line num="31" count="13" type="stmt"/>
-        <line num="32" count="13" type="stmt"/>
-        <line num="40" count="13" type="stmt"/>
+        <line num="31" count="11" type="stmt"/>
+        <line num="32" count="11" type="stmt"/>
+        <line num="40" count="11" type="stmt"/>
       </file>
     </package>
     <package name="src.shered.lib.tests">

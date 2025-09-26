@@ -6,14 +6,14 @@ import { profileReducer } from 'entities/Profile';
 import { ReducersList } from 'shered/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { addCommentFormReducer } from 'features/AddCommentForm';
 import { articleDetailsReducer } from 'entities/Article';
-import { articleDitailsCommentsReducer } from 'pages/ArticlesDetailsPage/model/slice/articleDitailsCommentsSlice';
+import { articleDedailsReducer } from 'pages/ArticlesDetailsPage';
 
 const defaultAsyncReducers: ReducersList = {
    login: loginReducer,
    profile: profileReducer,
    articleDetails: articleDetailsReducer,
    addCommentForm: addCommentFormReducer,
-   ArticleDitailsComments: articleDitailsCommentsReducer
+   articleDetailsPage: articleDedailsReducer
 }
 
 export const StoreDecorator = (

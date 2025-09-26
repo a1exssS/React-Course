@@ -1,11 +1,11 @@
-import { ArticleDetails } from 'entities/Article'
+import { ArticleDetails, ArticleList } from 'entities/Article'
 import React, { memo, useCallback } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import styles from './ArticlesDetailsPage.module.scss'
 import { classNames } from 'shered/lib/classNames/classNames'
 import { CommentList } from 'entities/Comment'
 import { DynamicModuleLoader, ReducersList } from 'shered/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { articleDitailsCommentsReducer, getArticleComments } from '../../model/slice/articleDitailsCommentsSlice'
+import { getArticleComments } from '../../model/slice/articleDitailsCommentsSlice'
 import { useSelector } from 'react-redux'
 import { getIsLoading } from '../../model/selectors/comments/comments'
 import { useInitialEffect } from 'shered/lib/hooks/useInitialEffect/useInitialEffect'
@@ -13,22 +13,27 @@ import { useAppDispatch } from 'shered/lib/hooks/useAppDispatch/useAppDispatch'
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { AddCommentForm } from 'features/AddCommentForm'
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
-import { Button, ThemeButton } from 'shered/ui/Button/Button'
-import { RoutePaths } from 'shered/config/routeConfig/routeConfig'
 import { Page } from 'widgets/Page/Page'
+import { getArticleRecomendation } from '../../model/slice/articleDitailsRecomendationsSlice'
+import { getRecomendationsIsLoading } from '../../model/selectors/recomendations/recomendations'
+import { fetchArticleRecomendations } from '../../model/services/fetchArticleRecomendations/fetchArticleRecomendations'
+import { articleDedailsReducer } from 'pages/ArticlesDetailsPage/model/slice'
+import { ArticlesDetailsPageHeader } from '../ArticlesDetailsPageHeader/ArticlesDetailsPageHeader'
 
 const reducers: ReducersList = {
-   ArticleDitailsComments: articleDitailsCommentsReducer
+   articleDetailsPage: articleDedailsReducer
 }
 
 const ArticlesDetailsPage = () => {
    const { id } = useParams<{ id: string }>()
    const comments = useSelector(getArticleComments.selectAll)
+   const recomendations = useSelector(getArticleRecomendation.selectAll)
+   const recomendationsIsLoading = useSelector(getRecomendationsIsLoading)
    const isLoading = useSelector(getIsLoading)
    const dispatch = useAppDispatch()
-   const navigate = useNavigate()
 
    useInitialEffect(() => {
+      dispatch(fetchArticleRecomendations())
       dispatch(fetchCommentsByArticleId(id))
    })
 
@@ -36,9 +41,7 @@ const ArticlesDetailsPage = () => {
       dispatch(addCommentForArticle(text))
    }, [dispatch])
 
-   const backToList = useCallback(() => {
-      navigate(RoutePaths.articles_details)
-   }, [navigate])
+
 
    if (!id) {
       return (
@@ -51,8 +54,10 @@ const ArticlesDetailsPage = () => {
    return (
       <DynamicModuleLoader reducers={reducers}>
          <Page className={classNames(styles.Article)}>
-            <Button theme={ThemeButton.OUTLINE} onClick={backToList}>Назад к списку</Button>
+            <ArticlesDetailsPageHeader />
             <ArticleDetails id={id} />
+            <h2 className={styles.CommentTitle}>Рекомендуем</h2>
+            <ArticleList articles={recomendations} isLoading={recomendationsIsLoading} className={styles.recomendationsScroll} />
             <h2 className={styles.CommentTitle}>Коментарии</h2>
             <AddCommentForm onSendComment={onSendComment} />
             <CommentList

@@ -6,3 +6,10 @@
    color: var(--inverted-secondary-color);
 
 }
+
+.button_like {
+   padding: 10px 15px;
+   border: 1px solid var(--inverted-primary-color);
+   color: var(--inverted-primary-color);
+   background: transparent;
+}

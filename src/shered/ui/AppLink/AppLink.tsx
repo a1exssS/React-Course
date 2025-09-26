@@ -11,7 +11,8 @@ interface AppLinkProps extends LinkProps {
 
 export enum AppLinkTheme {
    PRIMARY = 'primary',
-   SECONDARY = 'secondary'
+   SECONDARY = 'secondary',
+   BUTTON_LIKE = 'button_like'
 }
 
 export const AppLink = ({ className, children, theme = AppLinkTheme.PRIMARY, to, ...otherProps }: AppLinkProps) => {

@@ -11,3 +11,11 @@
 .commentSection {
    margin-top: 10px;
 }
+
+.recomendationsScroll {
+   white-space: nowrap;
+   overflow-x: auto;
+   overflow-y: hidden;
+   display: flex !important;
+   flex-wrap: nowrap;
+}

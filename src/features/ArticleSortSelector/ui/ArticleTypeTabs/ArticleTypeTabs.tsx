@@ -9,14 +9,14 @@ interface ArticleTypeTabsProps {
 
 export const ArticleTypeTabs = ({ onChangeType, value }: ArticleTypeTabsProps) => {
 
-   const typeTabs = useMemo<TabItem[]>(() => [
+   const typeTabs = useMemo<TabItem<AritcleTypes>[]>(() => [
       { value: AritcleTypes.ALL, content: 'Все' },
       { value: AritcleTypes.IT, content: 'Айти' },
       { value: AritcleTypes.SCIENCE, content: 'Наука' },
       { value: AritcleTypes.ECONOMICS, content: 'Экономика' },
    ], [])
 
-   const setType = useCallback((tab: TabItem) => {
+   const setType = useCallback((tab: TabItem<string>) => {
       onChangeType(tab.value as AritcleTypes)
    }, [onChangeType])
 
